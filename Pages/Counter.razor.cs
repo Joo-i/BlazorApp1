@@ -1,5 +1,3 @@
-
-
 namespace BlazorApp2.Pages
 {
     public partial class Counter
@@ -8,6 +6,7 @@ namespace BlazorApp2.Pages
         [Parameter] public int Step { get; set; } = 1;
         [Parameter] public int InitialCount { get; set; } = 1;
         [Parameter] public RenderFragment? ChildContent { get; set; }
+        [Parameter] public RenderFragment? SecondChildContent { get; set; }
         [Parameter] public string title { get; set; } = "Counter Page";  
         [Parameter] public string? key { get; set; } = "Counter";
 
@@ -38,4 +37,5 @@ namespace BlazorApp2.Pages
             currentCount = CounterService.GetCount(key!);
         }
     }
+
 }
