@@ -12,6 +12,11 @@ else
     <h1>@ChildContent</h1>
 }  
 
+@if (SecondChildContent is not null)
+{
+    <h2>@SecondChildContent</h2>
+}
+
 <p role="status" style="color:crimson">Current count: @CounterService.GetCount(key!)</p>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click Here</button>
@@ -28,4 +33,5 @@ else
     {
         <li>You clicked @(i+1) times </li>
     }
+
 </ul> 
