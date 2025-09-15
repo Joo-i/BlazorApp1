@@ -1,0 +1,31 @@
+﻿@page "/counter/{InitialCount:int?}"
+@inject CounterService CounterService
+
+<PageTitle>The Counter</PageTitle>
+
+@if (ChildContent is null)
+{
+    <h1>Counter</h1>
+}
+else
+{
+    <h1>@ChildContent</h1>
+}  
+
+<p role="status" style="color:crimson">Current count: @CounterService.GetCount(key!)</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click Here</button>
+
+<p>Step : @Step</p>
+
+@if (currentCount >=3)
+{
+    <p>You won!!!</p>
+}
+
+<ul>
+    @for (int i = 0; i < currentCount; i++)
+    {
+        <li>You clicked @(i+1) times </li>
+    }
+</ul> 
